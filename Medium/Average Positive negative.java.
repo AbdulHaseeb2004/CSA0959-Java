@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class AveragePositiveNegative {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int positiveSum = 0, negativeSum = 0;
+        int positiveCount = 0, negativeCount = 0;
+        int number;
+
+        System.out.println("Enter numbers (-1 to exit):");
+
+        while (true) {
+            number = sc.nextInt();
+
+            // Exit if the number is -1
+            if (number == -1) break;
+
+            // Check if the number is positive or negative
+            if (number > 0) {
+                positiveSum += number;
+                positiveCount++;
+            } else if (number < 0) {
+                negativeSum += number;
+                negativeCount++;
+            }
+        }
+
+        // Calculate and display averages
+        if (positiveCount > 0) {
+            double positiveAvg = (double) positiveSum / positiveCount;
+            System.out.println("The average of positive numbers is: " + positiveAvg);
+        } else {
+            System.out.println("No positive numbers were entered.");
+        }
+
+        if (negativeCount > 0) {
+            double negativeAvg = (double) negativeSum / negativeCount;
+            System.out.println("The average of negative numbers is: " + negativeAvg);
+        } else {
+            System.out.println("No negative numbers were entered.");
+        }
+
+        sc.close();
+    }
+}

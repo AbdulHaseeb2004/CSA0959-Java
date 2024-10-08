@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class AverageOfNumbers {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int sumPos = 0, sumNeg = 0, countPos = 0, countNeg = 0;
+        int number;
+        
+        System.out.println("Enter numbers (-1 to exit):");
+        
+        while (true) {
+            number = sc.nextInt();
+            
+            if (number == -1) break;
+            
+            if (number > 0) {
+                sumPos += number;
+                countPos++;
+            } else if (number < 0) {
+                sumNeg += number;
+                countNeg++;
+            }
+        }
+        
+        if (countPos > 0) {
+            System.out.println("The average of positive numbers is: " + (double) sumPos / countPos);
+        } else {
+            System.out.println("No positive numbers were entered.");
+        }
+        
+        if (countNeg > 0) {
+            System.out.println("The average of negative numbers is: " + (double) sumNeg / countNeg);
+        } else {
+            System.out.println("No negative numbers were entered.");
+        }
+        
+        sc.close();
+    }
+}

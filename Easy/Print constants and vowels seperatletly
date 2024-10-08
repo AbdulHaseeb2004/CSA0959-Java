@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class ConsonantsAndVowels {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a word: ");
+        String word = sc.nextLine().toLowerCase();       
+        StringBuilder consonants = new StringBuilder();
+        StringBuilder vowels = new StringBuilder();
+        for (char ch : word.toCharArray()) {
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                vowels.append(ch).append(" ");
+            } else if (Character.isLetter(ch)) {
+                consonants.append(ch).append(" ");
+            }
+        }
+        System.out.println("Consonants: " + consonants.toString());
+        System.out.println("Vowels: " + vowels.toString());
+        
+        sc.close();
+    }
+}

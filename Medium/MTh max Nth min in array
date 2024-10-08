@@ -1,0 +1,27 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class FindMaxMin {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] arr = {14, 16, 87, 36, 25, 89, 34};
+        Arrays.sort(arr);
+        System.out.print("Enter the value of M (for maximum): ");
+        int M = sc.nextInt();        
+        System.out.print("Enter the value of N (for minimum): ");
+        int N = sc.nextInt();       
+        if (M > 0 && M <= arr.length && N > 0 && N <= arr.length) {
+            int mthMax = arr[arr.length - M];
+            int nthMin = arr[N - 1];           
+            int sum = mthMax + nthMin;
+            int difference = mthMax - nthMin;         
+            System.out.println(M + "th Maximum Number = " + mthMax);
+            System.out.println(N + "th Minimum Number = " + nthMin);
+            System.out.println("Sum = " + sum);
+            System.out.println("Difference = " + difference);
+        } else {
+            System.out.println("Invalid input for M or N.");
+        }      
+        sc.close();
+    }
+}

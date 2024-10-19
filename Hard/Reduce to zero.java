@@ -1,0 +1,19 @@
+public class StepsToZero {
+    public int numberOfSteps(int num) {
+        int steps = 0;
+        while (num > 0) {
+            if (num % 2 == 0) {
+                num /= 2;
+            } else {
+                num -= 1;
+            }
+            steps++;
+        }
+        return steps;
+    }
+
+    public static void main(String[] args) {
+        StepsToZero stz = new StepsToZero();
+        System.out.println(stz.numberOfSteps(14));  // Output: 6
+    }
+}
